@@ -1,0 +1,13 @@
+security:
+  oauth2:
+    client:
+      client-id: 0oa58bec1w2C21JKt357
+      client-secret: f79RAJDoIUraWYIX1ct6WtQ96ku93gwFkNiORtyX
+      access-token-uri: https://dev-930555.okta.com/oauth2/default/v1/token
+      user-authorization-uri: https://dev-930555.okta.com/oauth2/default/v1/authorize
+      scope: openid profile email
+    resource:
+      token-info-uri: https://dev-930555.okta.com/oauth2/default/v1/introspect
+      server: http://localhost:8080
+
+logging.level.com.bk.client: debug

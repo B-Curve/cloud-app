@@ -1,0 +1,32 @@
+server.port: 9000
+
+okta:
+  oauth2:
+    issuer: https://dev-930555.okta.com/oauth2/default
+    client-id: 0oa58bec1w2C21JKt357
+    client-secret: f79RAJDoIUraWYIX1ct6WtQ96ku93gwFkNiORtyX
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/**
+          filters:
+            - TokenRelay=
+            - StripPrefix=1
+        - id: user-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/**
+          filters:
+            - TokenRelay=
+            - StripPrefix=1
+        - id: ui-app
+          uri: http://localhost:3000
+          predicates:
+            - Path=/**
+          filters:
+            - TokenRelay=

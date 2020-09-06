@@ -1,0 +1,11 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-930555.okta.com/oauth2/default
+          jwk-set-uri: https://dev-930555.okta.com/oauth2/default/v1/keys
+server:
+  port: 8081
+
+logging.level.com.bk.userservice: debug
